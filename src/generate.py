@@ -39,10 +39,7 @@ async def generate_all(out_path="results/generations.jsonl"):
 
     print(f"Will fix {len(prompts)} buggy solutions...")
     results = []
-    for idx, prompt in enumerate(prompts, start=1):
-        # Skipping sample 93 due to Pyodide recursion issue (known limitation)
-        if idx == 93:
-            continue
+    for prompt in prompts:
         fixed_code = await generate_for_item(prompt)
         results.append({"input": prompt, "output": fixed_code})
         with open(out_path, "a", encoding="utf-8") as f:

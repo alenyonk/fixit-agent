@@ -14,8 +14,7 @@ predictions = []
 with open("results/generations.jsonl", "r", encoding="utf-8") as f:
     predictions.extend([json.loads(line)["output"]] for line in f) 
 
-# Skipped 93 because of recursion limit
-tests = dataset["test"][:92] + dataset["test"][93:]
+tests = dataset["test"]
     
 
 results = code_eval.compute(

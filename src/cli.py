@@ -9,7 +9,7 @@ from langchain_sandbox import PyodideSandboxTool
 load_dotenv(find_dotenv())
 
 # Load model and sandbox tool
-model_name = "Qwen/Qwen2.5-Coder-32B-Instruct"
+model_name = "Qwen/Qwen2.5-7B-Instruct"
 llm = HuggingFaceEndpoint(
     repo_id=model_name,
     max_new_tokens=128,
